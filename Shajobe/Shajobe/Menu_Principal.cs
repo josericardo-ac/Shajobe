@@ -20,10 +20,6 @@ namespace Shajobe
             InitializeComponent();
         }
 
-        private void Menu_Principal_Load(object sender, EventArgs e)
-        {
-
-        }
         #region Diseño de la forma
         #region Creando controles
         private System.Windows.Forms.Label lbl_Proveedoresporpagar;
@@ -407,7 +403,7 @@ namespace Shajobe
             // 
             // menu
             // 
-            menu.BackColor = System.Drawing.SystemColors.Control;
+            menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(186)))), ((int)(((byte)(82)))));
             menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             catalogosToolStripMenuItem,
             inventariosToolStripMenuItem,
@@ -616,7 +612,7 @@ namespace Shajobe
             // 
             pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
             pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_Logo.Location = new System.Drawing.Point(985, 12);
+            pic_Logo.Location = new System.Drawing.Point(985, 25);
             pic_Logo.Name = "pic_Logo";
             pic_Logo.Size = new System.Drawing.Size(175, 75);
             pic_Logo.TabIndex = 33;
@@ -926,6 +922,7 @@ namespace Shajobe
             Controls.Add(pic_Pendiente);
             Controls.Add(dataPendiente);
             Controls.Add(menu);
+            BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.Icono_Shajobe;
             MainMenuStrip = menu;
@@ -933,7 +930,6 @@ namespace Shajobe
             MaximumSize = new System.Drawing.Size(1183, 820);
             MinimumSize = new System.Drawing.Size(1183, 820);
             Name = "Menu_Principal";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Menu principal";
             FormClosing += new System.Windows.Forms.FormClosingEventHandler(Menu_Principal_FormClosing);
             Load += new System.EventHandler(Menu_Principal_Load);
@@ -1317,6 +1313,10 @@ namespace Shajobe
             //    if (Id_Menu == 10) toolStripButton1.Enabled = true;
             //}
             //con.Close();
+        }
+        private void Menu_Principal_Load(object sender, EventArgs e)
+        {
+            Diseño_Forma();
         }
         #endregion
     }

@@ -151,6 +151,8 @@ namespace Shajobe
         private void Form1_Load(object sender, EventArgs e)
         {
             Diseño_Forma();
+            Menu_Principal p = new Menu_Principal();
+            p.Show();
         }
         private void btn_Iniciar_Click(object sender, EventArgs e)
         {
