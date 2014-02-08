@@ -46,16 +46,142 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abono.Designer.cs">
+      <DependentUpon>Abono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Almacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen.Designer.cs">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja.Designer.cs">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Indirecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indirecto.Designer.cs">
+      <DependentUpon>Indirecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredientes_Empaques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ingredientes_Empaques.Designer.cs">
+      <DependentUpon>Ingredientes_Empaques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materia_Prima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia_Prima.Designer.cs">
+      <DependentUpon>Materia_Prima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Materia_PrimaP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Materia_PrimaP.Designer.cs">
+      <DependentUpon>Materia_PrimaP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Principal.Designer.cs">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto_Elaborado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto_Elaborado.Designer.cs">
+      <DependentUpon>Producto_Elaborado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto_Terminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto_Terminado.Designer.cs">
+      <DependentUpon>Producto_Terminado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Abono.resx">
+      <DependentUpon>Abono.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen.resx">
+      <DependentUpon>Almacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja.resx">
+      <DependentUpon>Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indirecto.resx">
+      <DependentUpon>Indirecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingredientes_Empaques.resx">
+      <DependentUpon>Ingredientes_Empaques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia_Prima.resx">
+      <DependentUpon>Materia_Prima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Materia_PrimaP.resx">
+      <DependentUpon>Materia_PrimaP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Principal.resx">
+      <DependentUpon>Menu_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto_Elaborado.resx">
+      <DependentUpon>Producto_Elaborado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto_Terminado.resx">
+      <DependentUpon>Producto_Terminado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +193,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +220,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icono Shajobe.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cosas_Comprar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pendientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_eleventa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Indirecto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Materia_prima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto_Elaborado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\storage_warehouseupgrade_SE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modificar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

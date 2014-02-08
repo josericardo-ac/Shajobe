@@ -1,6 +1,6 @@
 ﻿namespace Shajobe
 {
-    partial class Menu_Principal
+    partial class Indirecto
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Menu_Principal
+            // Indirecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "Menu_Principal";
+            this.Name = "Indirecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu_Principal";
-            this.Load += new System.EventHandler(this.Menu_Principal_Load);
+            this.Text = "Indirecto";
             this.ResumeLayout(false);
 
         }
