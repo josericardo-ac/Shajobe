@@ -763,6 +763,7 @@ namespace Shajobe
             eliminarToolStripMenuItem.Enabled = false;
             modificarToolStripMenuItem.Enabled = false;
             groupBoxdatos.Visible = true;
+            errorProvider1.Clear();
             try
             {
                 //Quito el panel de busqueda

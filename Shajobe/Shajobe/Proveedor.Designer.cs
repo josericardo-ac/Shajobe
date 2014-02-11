@@ -38,6 +38,7 @@
             this.Name = "Proveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedor";
+            this.Load += new System.EventHandler(this.Proveedor_Load);
             this.ResumeLayout(false);
 
         }
