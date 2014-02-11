@@ -278,6 +278,39 @@
   <ItemGroup>
     <None Include="Resources\Modificar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Almacen_Icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caja_eleventa.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Indirecto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Materia_prima.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto_Elaborado.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Borrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

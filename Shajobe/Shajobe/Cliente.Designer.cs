@@ -38,6 +38,7 @@
             this.Name = "Cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
+            this.Load += new System.EventHandler(this.Cliente_Load);
             this.ResumeLayout(false);
 
         }
