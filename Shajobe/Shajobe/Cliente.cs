@@ -74,6 +74,7 @@ namespace Shajobe
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private PictureBox pic_Logo;
         #endregion
         private void Diseño_Forma()
         {
@@ -129,6 +130,7 @@ namespace Shajobe
             lbl_Razon_Social = new System.Windows.Forms.Label();
             lbl_RFC = new System.Windows.Forms.Label();
             lbl_Numerocliente = new System.Windows.Forms.Label();
+            pic_Logo = new System.Windows.Forms.PictureBox();
             errorProvider1 = new System.Windows.Forms.ErrorProvider(components);
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(pic_Cliente)).BeginInit();
@@ -166,6 +168,7 @@ namespace Shajobe
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
+            nuevoToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Nuevo;
             nuevoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -176,6 +179,7 @@ namespace Shajobe
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripMenuItem.Image")));
+            abrirToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Abrir;
             abrirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -191,6 +195,7 @@ namespace Shajobe
             // guardarToolStripMenuItem
             // 
             guardarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guardarToolStripMenuItem.Image")));
+            guardarToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Guardar;
             guardarToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -257,6 +262,16 @@ namespace Shajobe
             acercadeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             acercadeToolStripMenuItem.Text = "&Acerca de...";
             // 
+            // pic_Logo
+            // 
+            pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
+            pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pic_Logo.Location = new System.Drawing.Point(380,380);
+            pic_Logo.Name = "pic_Logo";
+            pic_Logo.Size = new System.Drawing.Size(166, 84);
+            pic_Logo.TabIndex = 13;
+            pic_Logo.TabStop = false;
+            // 
             // pic_Cliente
             // 
             pic_Cliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_Cliente.BackgroundImage")));
@@ -274,6 +289,7 @@ namespace Shajobe
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             groupBoxdatos.Controls.Add(groupBoxfoto);
+            groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(txt_Diascredito);
             groupBoxdatos.Controls.Add(txt_LimiteCredito);
             groupBoxdatos.Controls.Add(txt_Saldo);
@@ -697,7 +713,6 @@ namespace Shajobe
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.Clientes_ICO;
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
@@ -1196,8 +1211,7 @@ namespace Shajobe
         //-------------------------------------------------------------
         public static string ObtenerString()
         {
-            //return Settings.Default.ShajobeConnectionString;
-            return "";
+            return Settings.Default.ShajobeConnectionString;
         }
         //-------------------------------------------------------------
         //-------------------Validacion de campos----------------------

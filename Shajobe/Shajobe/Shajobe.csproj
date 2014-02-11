@@ -202,6 +202,7 @@
     <EmbeddedResource Include="Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -336,9 +337,6 @@
     <None Include="Resources\Modificar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Nuevo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\open.png" />
   </ItemGroup>
   <ItemGroup>
@@ -367,6 +365,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

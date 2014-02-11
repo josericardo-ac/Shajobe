@@ -73,6 +73,7 @@ namespace Shajobe
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private PictureBox pic_Logo;
         #endregion
         private void Diseño_Forma()
         {
@@ -128,6 +129,7 @@ namespace Shajobe
             lbl_Razon_Social = new System.Windows.Forms.Label();
             lbl_RFC = new System.Windows.Forms.Label();
             lbl_NumeroProveedor = new System.Windows.Forms.Label();
+            pic_Logo = new System.Windows.Forms.PictureBox();
             errorProvider1 = new System.Windows.Forms.ErrorProvider(components);
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(pic_Proveedor)).BeginInit();
@@ -165,6 +167,7 @@ namespace Shajobe
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
+            nuevoToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Nuevo;
             nuevoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -175,6 +178,7 @@ namespace Shajobe
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripMenuItem.Image")));
+            abrirToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Abrir;
             abrirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -190,6 +194,7 @@ namespace Shajobe
             // guardarToolStripMenuItem
             // 
             guardarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guardarToolStripMenuItem.Image")));
+            guardarToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Guardar;
             guardarToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             guardarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
@@ -256,6 +261,16 @@ namespace Shajobe
             acercadeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             acercadeToolStripMenuItem.Text = "&Acerca de...";
             // 
+            // pic_Logo
+            // 
+            pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
+            pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pic_Logo.Location = new System.Drawing.Point(380, 380);
+            pic_Logo.Name = "pic_Logo";
+            pic_Logo.Size = new System.Drawing.Size(166, 84);
+            pic_Logo.TabIndex = 13;
+            pic_Logo.TabStop = false;
+            // 
             // pic_Proveedor
             // 
             pic_Proveedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_Proveedor.BackgroundImage")));
@@ -273,6 +288,7 @@ namespace Shajobe
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             groupBoxdatos.Controls.Add(groupBoxfoto);
+            groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(txt_Diascredito);
             groupBoxdatos.Controls.Add(txt_LimiteCredito);
             groupBoxdatos.Controls.Add(txt_Saldo);
@@ -681,7 +697,7 @@ namespace Shajobe
             lbl_NumeroProveedor.Name = "lbl_NumeroProveedor";
             lbl_NumeroProveedor.Size = new System.Drawing.Size(78, 13);
             lbl_NumeroProveedor.TabIndex = 0;
-            lbl_NumeroProveedor.Text = "Numero proveedor";
+            lbl_NumeroProveedor.Text = "Numero cliente";
             // 
             // errorProvider1
             // 
@@ -696,7 +712,6 @@ namespace Shajobe
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.Proveedores_ICO;
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
@@ -759,10 +774,10 @@ namespace Shajobe
             groupBoxdatos.Visible = true;
             //RELLENO POR DEFECTO
             txt_Saldo.Text = "0.00";
-            errorProvider1.Clear();
             eliminarToolStripMenuItem.Enabled = false;
             modificarToolStripMenuItem.Enabled = false;
             groupBoxdatos.Visible = true;
+            errorProvider1.Clear();
             try
             {
                 //Quito el panel de busqueda
@@ -902,7 +917,7 @@ namespace Shajobe
             lbl_Etiqueta.Name = "lbl_Etiqueta";
             lbl_Etiqueta.Size = new System.Drawing.Size(419, 13);
             lbl_Etiqueta.TabIndex = 3;
-            lbl_Etiqueta.Text = "Escriba el nombre, uno de los apellidos, nombre de contacto ó RFC del cliente" +
+            lbl_Etiqueta.Text = "Escriba el nombre, uno de los apellidos, nombre de contacto ó RFC del proveedor" +
                 "a buscar";
             // 
             // bttn_Busqueda
@@ -952,10 +967,10 @@ namespace Shajobe
                     con = new OleDbConnection(ObtenerString());
                     con.Open();
                     tran = con.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                    OleDbCommand comando = new OleDbCommand("SP_Cliente_Cambios", con, tran);
+                    OleDbCommand comando = new OleDbCommand("SP_Proveedor_Cambios", con, tran);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
-                    comando.Parameters.AddWithValue("@Id_Cliente", Idp);
+                    comando.Parameters.AddWithValue("@Id_Proveedor", Idp);
                     comando.Parameters.AddWithValue("@RFC", txt_RFC.Text);
                     comando.Parameters.AddWithValue("@Razon_Social", txt_RazonSocial.Text);
                     comando.Parameters.AddWithValue("@Nombre", txt_Nombre.Text);
@@ -997,12 +1012,12 @@ namespace Shajobe
                 {
                     if (Direccion_Imagen == "")//LO UTILIZO EN CASO DE NO ESPECIFICAR UNA IMAGEN COMO FOTO AGREGUE UNA POR DEFECTO
                     {
-                        Direccion_Imagen = @"C:\Shajobe\Imagenes\Clientes.PNG";
+                        Direccion_Imagen = @"C:\Shajobe\Imagenes\Proveedores.PNG";
                     }
                     conexion = new OleDbConnection(ObtenerString());
                     conexion.Open();
                     transaccion = conexion.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                    OleDbCommand comando = new OleDbCommand("SP_Cliente_Alta", conexion, transaccion);
+                    OleDbCommand comando = new OleDbCommand("SP_Proveedor_Alta", conexion, transaccion);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
                     comando.Parameters.AddWithValue("@RFC", txt_RFC.Text);
@@ -1042,10 +1057,10 @@ namespace Shajobe
                 conexion = new OleDbConnection(ObtenerString());
                 conexion.Open();
                 transaccion = conexion.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                OleDbCommand comando = new OleDbCommand("SP_Cliente_Bajas", conexion, transaccion);
+                OleDbCommand comando = new OleDbCommand("SP_Proveedor_Bajas", conexion, transaccion);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@Id_Cliente", Idp);
+                comando.Parameters.AddWithValue("@Id_Proveedor", Idp);
                 comando.ExecuteNonQuery();
                 transaccion.Commit();
                 conexion.Close();
@@ -1081,14 +1096,14 @@ namespace Shajobe
             OleDbDataReader dr;
             con.ConnectionString = ObtenerString();
             coman.Connection = con;
-            coman.CommandText = "Select Id_Cliente,Numero_Cliente,RFC,Razon_Social,Nombre,Apellido_P,Apellido_M,Direccion,Ciudad,Estado,CP,Telefono,Correo,Nombre_Contacto,Saldo,Limite_Credito,Dias_Credito, Foto from Tb_Cliente where Id_Cliente='" + Idp + "'";
+            coman.CommandText = "Select Id_Proveedor,Numero_Proveedor,RFC,Razon_Social,Nombre,Apellido_P,Apellido_M,Direccion,Ciudad,Estado,CP,Telefono,Correo,Nombre_Contacto,Saldo,Limite_Credito,Dias_Credito, Foto from Tb_Proveedor where Id_Proveedor='" + Idp + "'";
             coman.CommandType = CommandType.Text;
             con.Open();
             data_resultado.Rows.Clear();
             dr = coman.ExecuteReader();
             while (dr.Read())
             {
-                txt_NumeroProveedor.Text = dr.GetString(dr.GetOrdinal("Numero_Cliente"));
+                txt_NumeroProveedor.Text = dr.GetString(dr.GetOrdinal("Numero_Proveedor"));
                 txt_RFC.Text = dr.GetString(dr.GetOrdinal("RFC"));
                 txt_RazonSocial.Text = dr.GetString(dr.GetOrdinal("Razon_Social"));
                 txt_Nombre.Text = dr.GetString(dr.GetOrdinal("Nombre"));
@@ -1128,7 +1143,7 @@ namespace Shajobe
                 string busqueda = txt_Busqueda.Text;
                 txt_Busqueda.Text = busqueda.ToUpper();
                 Foto.Dispose();
-                coman.CommandText = "Select Id_Cliente,Foto,Nombre,Apellido_P,Apellido_M,Nombre_Contacto,RFC from Tb_Cliente where (Nombre='" + busqueda.ToUpper() + "'OR Apellido_P='" + busqueda.ToUpper() + "'OR Apellido_M='" + busqueda.ToUpper() + "'OR Nombre_Contacto='" + busqueda.ToUpper() + "'OR RFC='" + busqueda.ToUpper() + "') AND Activo='S'";
+                coman.CommandText = "Select Id_Proveedor,Foto,Nombre,Apellido_P,Apellido_M,Nombre_Contacto,RFC from Tb_Proveedor where (Nombre='" + busqueda.ToUpper() + "'OR Apellido_P='" + busqueda.ToUpper() + "'OR Apellido_M='" + busqueda.ToUpper() + "'OR Nombre_Contacto='" + busqueda.ToUpper() + "'OR RFC='" + busqueda.ToUpper() + "') AND Activo='S'";
                 coman.CommandType = CommandType.Text;
                 con.Open();
                 data_resultado.Rows.Clear();
@@ -1136,8 +1151,8 @@ namespace Shajobe
                 while (dr.Read())
                 {
                     int Renglon = data_resultado.Rows.Add();
-                    Idp = dr.GetInt32(dr.GetOrdinal("Id_Cliente"));
-                    data_resultado.Rows[Renglon].Cells["Id"].Value = dr.GetInt32(dr.GetOrdinal("Id_Cliente"));
+                    Idp = dr.GetInt32(dr.GetOrdinal("Id_Proveedor"));
+                    data_resultado.Rows[Renglon].Cells["Id"].Value = dr.GetInt32(dr.GetOrdinal("Id_Proveedor"));
                     Foto.Image = Image.FromFile(dr.GetString(dr.GetOrdinal("Foto")));
                     data_resultado.Rows[Renglon].Cells["Nombre"].Value = dr.GetString(dr.GetOrdinal("Nombre"));
                     data_resultado.Rows[Renglon].Cells["Apellido_P"].Value = dr.GetString(dr.GetOrdinal("Apellido_P"));
@@ -1195,8 +1210,7 @@ namespace Shajobe
         //-------------------------------------------------------------
         public static string ObtenerString()
         {
-            //return Settings.Default.ShajobeConnectionString;
-            return "";
+            return Settings.Default.ShajobeConnectionString;
         }
         //-------------------------------------------------------------
         //-------------------Validacion de campos----------------------
@@ -1279,7 +1293,7 @@ namespace Shajobe
             DataTable dt = new DataTable();
 
             OleDbConnection conexion = new OleDbConnection(ObtenerString());//cadena conexion
-            string consulta = "SELECT * FROM Tb_Cliente where Activo='S'"; //consulta a la tabla paises
+            string consulta = "SELECT * FROM Tb_Proveedor where Activo='S'"; //consulta a la tabla paises
             OleDbCommand comando = new OleDbCommand(consulta, conexion);
             OleDbDataAdapter adap = new OleDbDataAdapter(comando);
             adap.Fill(dt);
