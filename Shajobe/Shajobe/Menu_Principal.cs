@@ -548,7 +548,7 @@ namespace Shajobe
             // 
             // cajaToolStripMenuItem
             // 
-            cajaToolStripMenuItem.Image = global::Shajobe.Properties.Resources.caja_eleventa;
+            cajaToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Caja;
             cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
             cajaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             cajaToolStripMenuItem.Text = "Caja";
@@ -923,8 +923,7 @@ namespace Shajobe
             Controls.Add(dataPendiente);
             Controls.Add(menu);
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            Icon = global::Shajobe.Properties.Resources.Icono_Shajobe;
+            Icon = global::Shajobe.Properties.Resources.Shajobe_ICO;
             MainMenuStrip = menu;
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(1183, 820);

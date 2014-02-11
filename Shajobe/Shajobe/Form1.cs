@@ -128,9 +128,8 @@ namespace Shajobe
             Controls.Add(lbl_Contrasena);
             Controls.Add(lbl_Usuario);
             Controls.Add(Linea);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            Icon = global::Shajobe.Properties.Resources.Icono_Shajobe;
+            Icon = global::Shajobe.Properties.Resources.Shajobe_ICO;
             MaximumSize = new System.Drawing.Size(444, 200);
             MinimumSize = new System.Drawing.Size(444, 200);
             Name = "Form1";

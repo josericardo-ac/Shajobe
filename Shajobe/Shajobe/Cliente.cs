@@ -260,10 +260,11 @@ namespace Shajobe
             // pic_Cliente
             // 
             pic_Cliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_Cliente.BackgroundImage")));
+            pic_Cliente.BackgroundImage = global::Shajobe.Properties.Resources.Clientes;
             pic_Cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_Cliente.Location = new System.Drawing.Point(493, 11);
+            pic_Cliente.Location = new System.Drawing.Point(493, 25);
             pic_Cliente.Name = "pic_Cliente";
-            pic_Cliente.Size = new System.Drawing.Size(85, 70);
+            pic_Cliente.Size = new System.Drawing.Size(85, 67);
             pic_Cliente.TabIndex = 7;
             pic_Cliente.TabStop = false;
             // 
@@ -696,8 +697,8 @@ namespace Shajobe
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            Icon = global::Shajobe.Properties.Resources.Clientes1;
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Icon = global::Shajobe.Properties.Resources.Clientes_ICO;
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(610, 630);

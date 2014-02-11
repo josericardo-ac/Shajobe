@@ -63,6 +63,26 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Administrative_Tools {
+            get {
+                object obj = ResourceManager.GetObject("Administrative_Tools", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Agregar {
+            get {
+                object obj = ResourceManager.GetObject("Agregar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Almacen {
             get {
                 object obj = ResourceManager.GetObject("Almacen", resourceCulture);
@@ -73,9 +93,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Almacen_Icono1 {
+        internal static System.Drawing.Icon Almacen_ICO {
             get {
-                object obj = ResourceManager.GetObject("Almacen_Icono1", resourceCulture);
+                object obj = ResourceManager.GetObject("Almacen_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -93,9 +113,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap caja_eleventa {
+        internal static System.Drawing.Bitmap Caja {
             get {
-                object obj = ResourceManager.GetObject("caja_eleventa", resourceCulture);
+                object obj = ResourceManager.GetObject("Caja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +123,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon caja_eleventa1 {
+        internal static System.Drawing.Icon Caja_ICO {
             get {
-                object obj = ResourceManager.GetObject("caja_eleventa1", resourceCulture);
+                object obj = ResourceManager.GetObject("Caja_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -123,9 +143,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Clientes1 {
+        internal static System.Drawing.Icon Clientes_ICO {
             get {
-                object obj = ResourceManager.GetObject("Clientes1", resourceCulture);
+                object obj = ResourceManager.GetObject("Clientes_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -161,12 +181,22 @@ namespace Shajobe.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon Icono_Shajobe {
+        internal static System.Drawing.Bitmap Dinero {
             get {
-                object obj = ResourceManager.GetObject("Icono_Shajobe", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("Dinero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dispositivos {
+            get {
+                object obj = ResourceManager.GetObject("dispositivos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -183,9 +213,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Indirecto1 {
+        internal static System.Drawing.Icon Indirecto_ICO {
             get {
-                object obj = ResourceManager.GetObject("Indirecto1", resourceCulture);
+                object obj = ResourceManager.GetObject("Indirecto_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -233,9 +263,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Materia_prima1 {
+        internal static System.Drawing.Icon MateriaPrima_ICO {
             get {
-                object obj = ResourceManager.GetObject("Materia_prima1", resourceCulture);
+                object obj = ResourceManager.GetObject("MateriaPrima_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -246,6 +276,26 @@ namespace Shajobe.Properties {
         internal static System.Drawing.Bitmap Modificar {
             get {
                 object obj = ResourceManager.GetObject("Modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nuevo {
+            get {
+                object obj = ResourceManager.GetObject("Nuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open {
+            get {
+                object obj = ResourceManager.GetObject("open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +333,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Producto_Elaborado1 {
+        internal static System.Drawing.Icon Producto_ICO {
             get {
-                object obj = ResourceManager.GetObject("Producto_Elaborado1", resourceCulture);
+                object obj = ResourceManager.GetObject("Producto_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -293,9 +343,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Producto1 {
+        internal static System.Drawing.Icon ProductoElaborado_ICO {
             get {
-                object obj = ResourceManager.GetObject("Producto1", resourceCulture);
+                object obj = ResourceManager.GetObject("ProductoElaborado_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -313,9 +363,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Proveedores1 {
+        internal static System.Drawing.Icon Proveedores_ICO {
             get {
-                object obj = ResourceManager.GetObject("Proveedores1", resourceCulture);
+                object obj = ResourceManager.GetObject("Proveedores_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -337,6 +387,16 @@ namespace Shajobe.Properties {
             get {
                 object obj = ResourceManager.GetObject("Reportes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon Shajobe_ICO {
+            get {
+                object obj = ResourceManager.GetObject("Shajobe_ICO", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -363,9 +423,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Usuario1 {
+        internal static System.Drawing.Icon Usuario_ICO {
             get {
-                object obj = ResourceManager.GetObject("Usuario1", resourceCulture);
+                object obj = ResourceManager.GetObject("Usuario_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -383,9 +443,9 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Icon Venta1 {
+        internal static System.Drawing.Icon Venta_ICO {
             get {
-                object obj = ResourceManager.GetObject("Venta1", resourceCulture);
+                object obj = ResourceManager.GetObject("Venta_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

@@ -213,70 +213,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo_Shajobe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Siguiente.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icono Shajobe.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clientes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cosas_Comprar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pendientes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Proveedores.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\caja_eleventa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Compra.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Control_Inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Indirecto.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Materia_prima.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Producto.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Producto_Elaborado.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Quitar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Reportes.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\storage_warehouseupgrade_SE.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Usuario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Venta.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Modificar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Almacen_Icono.ico" />
@@ -309,7 +252,121 @@
     <None Include="Resources\Venta.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Almacen_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caja_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Indirecto_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MateriaPrima_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProductoElaborado_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shajobe_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta_ICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrative Tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Almacen.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Caja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control_Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cosas_Comprar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dinero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dispositivos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Indirecto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Shajobe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Materia_prima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pendientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto_Elaborado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Venta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
