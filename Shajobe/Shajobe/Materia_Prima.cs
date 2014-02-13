@@ -350,13 +350,11 @@ namespace Shajobe
             Controls.Add(pic_MateriaPrima);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.MateriaPrima_ICO;
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(600, 426);
             MinimumSize = new System.Drawing.Size(600, 426);
             Name = "Materia_Prima";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Materia_Prima";
             Load += new System.EventHandler(Materia_Prima_Load);
             menuStrip1.ResumeLayout(false);
