@@ -38,6 +38,7 @@
             this.Name = "Materia_PrimaP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materia_PrimaP";
+            this.Load += new System.EventHandler(this.Materia_PrimaP_Load);
             this.ResumeLayout(false);
 
         }

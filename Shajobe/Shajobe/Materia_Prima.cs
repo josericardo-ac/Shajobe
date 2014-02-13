@@ -364,8 +364,6 @@ namespace Shajobe
             groupBoxdatos.ResumeLayout(false);
             groupBoxdatos.PerformLayout();
             groupBoxfoto.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
             AnimateWindow(Handle, 350, AnimateWindowFlags.AW_CENTER);
             AnimateWindow(Handle, 350, AnimateWindowFlags.AW_CENTER | AnimateWindowFlags.AW_SLIDE);
             ResumeLayout(false);
