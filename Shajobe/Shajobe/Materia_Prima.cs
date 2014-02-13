@@ -42,8 +42,6 @@ namespace Shajobe
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pic_MateriaPrima;
         private System.Windows.Forms.GroupBox groupBoxdatos;
-        private System.Windows.Forms.ComboBox combo_Almacen;
-        private System.Windows.Forms.Label lbl_Almacen;
         private System.Windows.Forms.TextBox txt_Descripcion;
         private System.Windows.Forms.TextBox txt_Nombre;
         private System.Windows.Forms.Label lbl_Descripcion;
@@ -78,8 +76,6 @@ namespace Shajobe
             errorProvider1 = new System.Windows.Forms.ErrorProvider(components);
             pic_MateriaPrima = new System.Windows.Forms.PictureBox();
             groupBoxdatos = new System.Windows.Forms.GroupBox();
-            combo_Almacen = new System.Windows.Forms.ComboBox();
-            lbl_Almacen = new System.Windows.Forms.Label();
             txt_Descripcion = new System.Windows.Forms.TextBox();
             txt_Nombre = new System.Windows.Forms.TextBox();
             lbl_Descripcion = new System.Windows.Forms.Label();
@@ -245,8 +241,6 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(comboBox_TipoPieza);
             groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(lbl_TipoPieza);
-            groupBoxdatos.Controls.Add(combo_Almacen);
-            groupBoxdatos.Controls.Add(lbl_Almacen);
             groupBoxdatos.Controls.Add(txt_Descripcion);
             groupBoxdatos.Controls.Add(txt_Nombre);
             groupBoxdatos.Controls.Add(lbl_Descripcion);
@@ -258,23 +252,6 @@ namespace Shajobe
             groupBoxdatos.TabIndex = 22;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del producto";
-            // 
-            // combo_Almacen
-            // 
-            combo_Almacen.FormattingEnabled = true;
-            combo_Almacen.Location = new System.Drawing.Point(122, 144);
-            combo_Almacen.Name = "combo_Almacen";
-            combo_Almacen.Size = new System.Drawing.Size(156, 21);
-            combo_Almacen.TabIndex = 57;
-            // 
-            // lbl_Almacen
-            // 
-            lbl_Almacen.AutoSize = true;
-            lbl_Almacen.Location = new System.Drawing.Point(23, 147);
-            lbl_Almacen.Name = "lbl_Almacen";
-            lbl_Almacen.Size = new System.Drawing.Size(48, 13);
-            lbl_Almacen.TabIndex = 20;
-            lbl_Almacen.Text = "Almacen";
             // 
             // txt_Descripcion
             // 
@@ -340,7 +317,7 @@ namespace Shajobe
             // comboBox_TipoPieza
             // 
             comboBox_TipoPieza.FormattingEnabled = true;
-            comboBox_TipoPieza.Location = new System.Drawing.Point(122, 171);
+            comboBox_TipoPieza.Location = new System.Drawing.Point(122, 144);
             comboBox_TipoPieza.Name = "comboBox_TipoPieza";
             comboBox_TipoPieza.Size = new System.Drawing.Size(156, 21);
             comboBox_TipoPieza.TabIndex = 59;
@@ -348,7 +325,7 @@ namespace Shajobe
             // lbl_TipoPieza
             // 
             lbl_TipoPieza.AutoSize = true;
-            lbl_TipoPieza.Location = new System.Drawing.Point(23, 174);
+            lbl_TipoPieza.Location = new System.Drawing.Point(23, 147);
             lbl_TipoPieza.Name = "lbl_TipoPieza";
             lbl_TipoPieza.Size = new System.Drawing.Size(71, 13);
             lbl_TipoPieza.TabIndex = 58;
@@ -407,8 +384,6 @@ namespace Shajobe
         {
             //Diseño de la fomra
             Diseño_Forma();
-            //LLENANDO DE DATOS EL COMBOBOX CON LOS ALMACENES DISPONIBLES
-            Llenando_Combobox();
             //LLENANDO DE DATOS EL COMBOBOX CON LOS TIPOS DE PIEZAS
             Llenando_ComboboxTipo();
         }
@@ -424,9 +399,8 @@ namespace Shajobe
             txt_Nombre.Clear();
             txt_Descripcion.Clear();
             Direccion_Imagen = "";
-            panel_Busqueda.Visible = false;
             groupBoxdatos.Visible = true;
-            combo_Almacen.ResetText();
+            comboBox_TipoPieza.ResetText();
             modificarToolStripMenuItem.Enabled = false;
             eliminarToolStripMenuItem.Enabled = false;
             errorProvider1.Clear();
@@ -514,7 +488,7 @@ namespace Shajobe
             data_resultado.Size = new System.Drawing.Size(470, 150);
             data_resultado.TabIndex = 2;
             data_resultado.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(data_resultado_MouseDoubleClick);
-
+            //
             // Descripcion
             // 
             Descripcion.HeaderText = "Descripcion";
@@ -581,7 +555,6 @@ namespace Shajobe
             txt_Busqueda.AutoCompleteCustomSource = Autocomplete();
             txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
             txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
         }
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -601,6 +574,7 @@ namespace Shajobe
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
                     comando.Parameters.AddWithValue("@Id_MateriaPrima", Idp);
+                    comando.Parameters.AddWithValue("@Id_TipoPieza", comboBox_TipoPieza.SelectedIndex + 1);
                     comando.Parameters.AddWithValue("@Nombre", txt_Nombre.Text);
                     comando.Parameters.AddWithValue("@Descripcion", txt_Descripcion.Text);
                     comando.Parameters.AddWithValue("@Foto", Direccion_Imagen);
@@ -637,6 +611,7 @@ namespace Shajobe
                     OleDbCommand comando = new OleDbCommand("SP_MateriaPrima_Alta", conexion, transaccion);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue("@Id_TipoPieza",comboBox_TipoPieza.SelectedIndex+1);
                     comando.Parameters.AddWithValue("@Nombre", txt_Nombre.Text);
                     comando.Parameters.AddWithValue("@Descripcion", txt_Descripcion.Text);
                     comando.Parameters.AddWithValue("@Foto", Direccion_Imagen);
@@ -703,6 +678,7 @@ namespace Shajobe
             coman.CommandType = CommandType.Text;
             con.Open();
             data_resultado.Rows.Clear();
+            comboBox_TipoPieza.ResetText();
             dr = coman.ExecuteReader();
             while (dr.Read())
             {
@@ -710,6 +686,9 @@ namespace Shajobe
                 txt_Descripcion.Text = dr.GetString(dr.GetOrdinal("Descripcion"));
                 pic_ImagenContacto.BackgroundImage = Image.FromFile(dr.GetString(dr.GetOrdinal("Foto")));
                 Direccion_Imagen = dr.GetString(dr.GetOrdinal("Foto"));
+                int seleccion = dr.GetInt32(dr.GetOrdinal("Id_TipoPieza"));
+                seleccion = seleccion - 1;
+                comboBox_TipoPieza.SelectedIndex = seleccion;
                 eliminarToolStripMenuItem.Enabled = true;
                 modificarToolStripMenuItem.Enabled = true;
             }
@@ -903,27 +882,6 @@ namespace Shajobe
             return coleccion;
         }
         //METODO PARA LLENAR EL COMBOBOX
-        private void Llenando_Combobox()
-        {
-            OleDbConnection con = new OleDbConnection();
-            OleDbCommand coman = new OleDbCommand();
-            OleDbDataReader dr;
-            con.ConnectionString = ObtenerString();
-            coman.Connection = con;
-            coman.CommandText = "Select Nombre  from Tb_Almacen where Activo='S'";
-            coman.CommandType = CommandType.Text;
-            con.Open();
-            combo_Almacen.Items.Clear();
-            dr = coman.ExecuteReader();
-            while (dr.Read())
-            {
-                //Declarando Variables y obteniendo los valores correspondiente
-                string Nombre = dr.GetString(dr.GetOrdinal("Nombre"));
-                combo_Almacen.Items.Add(Nombre);
-
-            }
-            con.Close();
-        }
         private void Llenando_ComboboxTipo()
         {
             OleDbConnection con = new OleDbConnection();
