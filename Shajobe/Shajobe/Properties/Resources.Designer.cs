@@ -143,6 +143,16 @@ namespace Shajobe.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calcular {
+            get {
+                object obj = ResourceManager.GetObject("Calcular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Clientes {
             get {
                 object obj = ResourceManager.GetObject("Clientes", resourceCulture);
@@ -237,6 +247,16 @@ namespace Shajobe.Properties {
             get {
                 object obj = ResourceManager.GetObject("Indirecto_ICO", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ingresar {
+            get {
+                object obj = ResourceManager.GetObject("Ingresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -396,6 +416,16 @@ namespace Shajobe.Properties {
         internal static System.Drawing.Bitmap Reportes {
             get {
                 object obj = ResourceManager.GetObject("Reportes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Retirar {
+            get {
+                object obj = ResourceManager.GetObject("Retirar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
