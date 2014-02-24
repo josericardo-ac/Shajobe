@@ -396,7 +396,6 @@ namespace Shajobe
             Controls.Add(pic_Indirecto);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.Indirecto_ICO;
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(577, 371);
