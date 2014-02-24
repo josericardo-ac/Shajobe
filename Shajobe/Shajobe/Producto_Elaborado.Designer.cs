@@ -38,6 +38,7 @@
             this.Name = "Producto_Elaborado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto_Elaborado";
+            this.Load += new System.EventHandler(this.Producto_Elaborado_Load);
             this.ResumeLayout(false);
 
         }
