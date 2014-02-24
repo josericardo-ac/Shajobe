@@ -38,6 +38,7 @@
             this.Name = "Inventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.Inventario_Load);
             this.ResumeLayout(false);
 
         }
