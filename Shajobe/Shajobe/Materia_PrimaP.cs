@@ -409,7 +409,6 @@ namespace Shajobe
             Controls.Add(pic_MateriaPrimaP);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.MateriaPrima_ICO;
             MaximizeBox = false;
             MaximumSize = new System.Drawing.Size(569, 366);
