@@ -403,7 +403,7 @@ namespace Shajobe
             MinimumSize = new System.Drawing.Size(577, 371);
             Name = "Indirecto";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Indirecto";
+            Text = "Producto indirecto";
             Load += new System.EventHandler(Indirecto_Load);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
