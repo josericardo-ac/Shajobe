@@ -231,7 +231,7 @@ namespace Shajobe
             // 
             pic_MateriaPrimaP.BackgroundImage = global::Shajobe.Properties.Resources.Materia_prima;
             pic_MateriaPrimaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_MateriaPrimaP.Location = new System.Drawing.Point(473, 25);
+            pic_MateriaPrimaP.Location = new System.Drawing.Point(493, 25);
             pic_MateriaPrimaP.Name = "pic_MateriaPrimaP";
             pic_MateriaPrimaP.Size = new System.Drawing.Size(85, 67);
             pic_MateriaPrimaP.TabIndex = 21;
@@ -249,10 +249,11 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(lbl_Descripcion);
             groupBoxdatos.Controls.Add(lbl_Nombre);
             groupBoxdatos.Controls.Add(lbl_Clave);
+            groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(groupBoxfoto);
-            groupBoxdatos.Location = new System.Drawing.Point(4, 43);
+            groupBoxdatos.Location = new System.Drawing.Point(7, 49);
             groupBoxdatos.Name = "groupBoxdatos";
-            groupBoxdatos.Size = new System.Drawing.Size(555, 293);
+            groupBoxdatos.Size = new System.Drawing.Size(580, 340);
             groupBoxdatos.TabIndex = 20;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del producto";
@@ -394,9 +395,9 @@ namespace Shajobe
             // 
             pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
             pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_Logo.Location = new System.Drawing.Point(80, 230);
+            pic_Logo.Location = new System.Drawing.Point(90, 250);
             pic_Logo.Name = "pic_Logo";
-            pic_Logo.Size = new System.Drawing.Size(166, 84);
+            pic_Logo.Size = new System.Drawing.Size(156, 74);
             pic_Logo.TabIndex = 13;
             pic_Logo.TabStop = false;
             // 
@@ -411,8 +412,8 @@ namespace Shajobe
             Controls.Add(menuStrip1);
             Icon = global::Shajobe.Properties.Resources.MateriaPrima_ICO;
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(569, 366);
-            MinimumSize = new System.Drawing.Size(569, 366);
+            MaximumSize = new System.Drawing.Size(607, 433);
+            MinimumSize = new System.Drawing.Size(607, 433);
             Name = "Materia_PrimaP";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Materia prima";

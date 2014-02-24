@@ -323,7 +323,7 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(lbl_NumeroProveedor);
             groupBoxdatos.Location = new System.Drawing.Point(8, 52);
             groupBoxdatos.Name = "groupBoxdatos";
-            groupBoxdatos.Size = new System.Drawing.Size(588, 543);
+            groupBoxdatos.Size = new System.Drawing.Size(578, 533);
             groupBoxdatos.TabIndex = 6;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del proveedor";

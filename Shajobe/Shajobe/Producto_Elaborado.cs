@@ -221,9 +221,9 @@ namespace Shajobe
             // 
             pic_ProductoElaborado.BackgroundImage = global::Shajobe.Properties.Resources.Producto_Elaborado;
             pic_ProductoElaborado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_ProductoElaborado.Location = new System.Drawing.Point(479, 25);
+            pic_ProductoElaborado.Location = new System.Drawing.Point(493, 24);
             pic_ProductoElaborado.Name = "pic_ProductoElaborado";
-            pic_ProductoElaborado.Size = new System.Drawing.Size(75, 60);
+            pic_ProductoElaborado.Size = new System.Drawing.Size(85, 64);
             pic_ProductoElaborado.TabIndex = 23;
             pic_ProductoElaborado.TabStop = false;
             // 
@@ -296,10 +296,11 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(txt_Nombre);
             groupBoxdatos.Controls.Add(lbl_Descripcion);
             groupBoxdatos.Controls.Add(lbl_Nombre);
+            groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(groupBoxfoto);
-            groupBoxdatos.Location = new System.Drawing.Point(5, 42);
+            groupBoxdatos.Location = new System.Drawing.Point(7, 49);
             groupBoxdatos.Name = "groupBoxdatos";
-            groupBoxdatos.Size = new System.Drawing.Size(555, 293);
+            groupBoxdatos.Size = new System.Drawing.Size(580, 340);
             groupBoxdatos.TabIndex = 22;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del producto";
@@ -308,9 +309,9 @@ namespace Shajobe
             // 
             pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
             pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_Logo.Location = new System.Drawing.Point(380, 380);
+            pic_Logo.Location = new System.Drawing.Point(90, 250);
             pic_Logo.Name = "pic_Logo";
-            pic_Logo.Size = new System.Drawing.Size(166, 84);
+            pic_Logo.Size = new System.Drawing.Size(156, 74);
             pic_Logo.TabIndex = 13;
             pic_Logo.TabStop = false;
             // 
@@ -319,15 +320,14 @@ namespace Shajobe
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            ClientSize = new System.Drawing.Size(569, 353);
+            ClientSize = new System.Drawing.Size(594, 352);
             Controls.Add(pic_ProductoElaborado);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.ProductoElaborado_ICO;
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(575, 375);
-            MinimumSize = new System.Drawing.Size(575, 375);
+            MaximumSize = new System.Drawing.Size(607, 433);
+            MinimumSize = new System.Drawing.Size(607, 433);
             Name = "Producto_Elaborado";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Producto elaborado";

@@ -324,7 +324,7 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(lbl_Numerocliente);
             groupBoxdatos.Location = new System.Drawing.Point(8, 52);
             groupBoxdatos.Name = "groupBoxdatos";
-            groupBoxdatos.Size = new System.Drawing.Size(588, 543);
+            groupBoxdatos.Size = new System.Drawing.Size(578, 533);
             groupBoxdatos.TabIndex = 6;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del cliente";
@@ -716,8 +716,8 @@ namespace Shajobe
             Icon = global::Shajobe.Properties.Resources.Clientes_ICO;
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(610, 630);
-            MinimumSize = new System.Drawing.Size(610, 630);
+            MaximumSize = new System.Drawing.Size(600, 620);
+            MinimumSize = new System.Drawing.Size(600, 620);
             Name = "Cliente";
             Text = "Cliente";
             Load += new System.EventHandler(Cliente_Load);

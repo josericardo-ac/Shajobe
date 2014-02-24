@@ -1702,7 +1702,6 @@ namespace Shajobe
             MaximumSize = new System.Drawing.Size(840, 535);
             MinimumSize = new System.Drawing.Size(840, 535);
             Name = "Inventario";
-            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Inventario";
             Load += new System.EventHandler(Inventario_Load);
             tabControl1.ResumeLayout(false);

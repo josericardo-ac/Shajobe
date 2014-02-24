@@ -52,10 +52,12 @@ namespace Shajobe
         private System.Windows.Forms.GroupBox groupBoxfoto;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private PictureBox pic_Logo;
         #endregion
         private void Diseño_Forma()
         {
             components = new System.ComponentModel.Container();
+            pic_Logo = new System.Windows.Forms.PictureBox();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Indirecto));
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -228,9 +230,9 @@ namespace Shajobe
             pic_Indirecto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_Indirecto.BackgroundImage")));
             pic_Indirecto.BackgroundImage = global::Shajobe.Properties.Resources.Indirecto;
             pic_Indirecto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pic_Indirecto.Location = new System.Drawing.Point(479, 24);
+            pic_Indirecto.Location = new System.Drawing.Point(493, 24);
             pic_Indirecto.Name = "pic_Indirecto";
-            pic_Indirecto.Size = new System.Drawing.Size(85, 62);
+            pic_Indirecto.Size = new System.Drawing.Size(85, 64);
             pic_Indirecto.TabIndex = 19;
             pic_Indirecto.TabStop = false;
             // 
@@ -246,10 +248,11 @@ namespace Shajobe
             groupBoxdatos.Controls.Add(lbl_Descripcion);
             groupBoxdatos.Controls.Add(lbl_Nombre);
             groupBoxdatos.Controls.Add(lbl_Clave);
+            groupBoxdatos.Controls.Add(pic_Logo);
             groupBoxdatos.Controls.Add(groupBoxfoto);
             groupBoxdatos.Location = new System.Drawing.Point(7, 49);
             groupBoxdatos.Name = "groupBoxdatos";
-            groupBoxdatos.Size = new System.Drawing.Size(555, 293);
+            groupBoxdatos.Size = new System.Drawing.Size(580, 340);
             groupBoxdatos.TabIndex = 18;
             groupBoxdatos.TabStop = false;
             groupBoxdatos.Text = "Datos del producto";
@@ -383,6 +386,16 @@ namespace Shajobe
             btn_Buscar.UseVisualStyleBackColor = true;
             btn_Buscar.Click += new System.EventHandler(btn_Buscar_Click);
             // 
+            // pic_Logo
+            // 
+            pic_Logo.BackgroundImage = global::Shajobe.Properties.Resources.Logo_Shajobe;
+            pic_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pic_Logo.Location = new System.Drawing.Point(90, 250);
+            pic_Logo.Name = "pic_Logo";
+            pic_Logo.Size = new System.Drawing.Size(156, 74);
+            pic_Logo.TabIndex = 13;
+            pic_Logo.TabStop = false;
+            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -392,14 +405,14 @@ namespace Shajobe
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(228)))), ((int)(((byte)(196)))));
-            ClientSize = new System.Drawing.Size(571, 349);
+            ClientSize = new System.Drawing.Size(594, 352);
             Controls.Add(pic_Indirecto);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
             Icon = global::Shajobe.Properties.Resources.Indirecto_ICO;
             MaximizeBox = false;
-            MaximumSize = new System.Drawing.Size(577, 371);
-            MinimumSize = new System.Drawing.Size(577, 371);
+            MaximumSize = new System.Drawing.Size(607, 433);
+            MinimumSize = new System.Drawing.Size(607, 433);
             Name = "Indirecto";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Producto indirecto";

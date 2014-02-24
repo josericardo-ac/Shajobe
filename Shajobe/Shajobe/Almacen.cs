@@ -683,6 +683,7 @@ namespace Shajobe
             txt_Lugar.Clear();
             eliminarToolStripMenuItem.Enabled = false;
             modificarToolStripMenuItem.Enabled = false;
+            errorProvider1.Clear();
             groupBoxdatos.Visible = true;
             try
             {
