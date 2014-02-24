@@ -38,6 +38,7 @@
             this.Name = "Indirecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Indirecto";
+            this.Load += new System.EventHandler(this.Indirecto_Load);
             this.ResumeLayout(false);
 
         }
