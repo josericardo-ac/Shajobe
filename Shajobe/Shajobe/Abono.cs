@@ -143,6 +143,7 @@ namespace Shajobe
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nuevoToolStripMenuItem.Image")));
+            nuevoToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Nuevo;
             nuevoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             nuevoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -153,6 +154,7 @@ namespace Shajobe
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("abrirToolStripMenuItem.Image")));
+            abrirToolStripMenuItem.Image = global::Shajobe.Properties.Resources.Abrir;
             abrirToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
             abrirToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
