@@ -355,8 +355,8 @@ namespace Shajobe
             Controls.Add(pic_Caja);
             Controls.Add(groupBoxdatos);
             Controls.Add(menuStrip1);
-            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Icon = global::Shajobe.Properties.Resources.Caja_ICO;
+            MaximizeBox = false;
             Name = "Caja";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Caja";
