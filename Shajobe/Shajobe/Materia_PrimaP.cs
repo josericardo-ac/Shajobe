@@ -680,7 +680,7 @@ namespace Shajobe
                     conexion = new OleDbConnection(ObtenerString());
                     conexion.Open();
                     transaccion = conexion.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                    OleDbCommand comando = new OleDbCommand("SP_Tb_MateriaPrimaP_Alta", conexion, transaccion);
+                    OleDbCommand comando = new OleDbCommand("SP_MateriaPrimaP_Alta", conexion, transaccion);
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Clear();
                     comando.Parameters.AddWithValue("@Nombre", txt_Nombre.Text);
