@@ -2068,13 +2068,17 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimam.Value.Date);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
             }
@@ -2103,13 +2107,17 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimap.Value.Date);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
             }
@@ -2138,13 +2146,17 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Fecha", dateTime_ProductoElaborado.Value.Date);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
             }
@@ -2172,13 +2184,17 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Fecha", dateTime_ProductoIndirecto.Value.Date);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
             }
@@ -2211,13 +2227,17 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Fecha", dateTime_ProductoTerminado.Value.Date);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
             }
