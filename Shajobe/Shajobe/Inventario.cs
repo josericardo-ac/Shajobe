@@ -1886,6 +1886,7 @@ namespace Shajobe
             Llenando_ProductoTerminado();
             tabControl1.SendToBack();
         }
+        #region Controles_Busqueda
         //Creando controles
         DataGridView data_resultado;
         TextBox txt_Busqueda;
@@ -1897,8 +1898,10 @@ namespace Shajobe
         DataGridViewTextBoxColumn Loteb;
         DataGridViewTextBoxColumn Nombreb;
         DataGridViewTextBoxColumn Idb;
+        #endregion
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            #region Controles_Abrir
             //INICIALIZANDO CONTROLES
             panel_Busqueda = new System.Windows.Forms.Panel();
             txt_Busqueda = new System.Windows.Forms.TextBox();
@@ -1943,7 +1946,7 @@ namespace Shajobe
             data_resultado.Size = new System.Drawing.Size(470, 150);
             data_resultado.TabIndex = 2;
             data_resultado.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(data_resultado_MouseDoubleClick);
-
+            //
             // Descripcion
             // 
             Loteb.HeaderText = "Lote";
@@ -1999,8 +2002,9 @@ namespace Shajobe
             panel_Busqueda.Visible = true;
             panel_Busqueda.Enabled = true;
             tabControl1.Visible = false;
-
+            #endregion
             string ficha = tabControl1.SelectedIndex.ToString();
+            #region Ficha0_Abrir
             if (ficha == "0")
             {
                 //CARACTERISTICA DE AUTOCOMPLETADO EN TXT_BUSQUEDA
@@ -2008,6 +2012,8 @@ namespace Shajobe
                 txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
                 txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
+            #endregion
+            #region Ficha1_Abrir
             else if (ficha == "1")
             {
                 //CARACTERISTICA DE AUTOCOMPLETADO EN TXT_BUSQUEDA
@@ -2015,6 +2021,8 @@ namespace Shajobe
                 txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
                 txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
+            #endregion
+            #region Ficha2_Abrir
             else if (ficha == "2")
             {
                 //CARACTERISTICA DE AUTOCOMPLETADO EN TXT_BUSQUEDA
@@ -2022,6 +2030,8 @@ namespace Shajobe
                 txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
                 txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
+            #endregion
+            #region Ficha3_Abrir
             else if (ficha == "3")
             {
                 //CARACTERISTICA DE AUTOCOMPLETADO EN TXT_BUSQUEDA
@@ -2029,6 +2039,8 @@ namespace Shajobe
                 txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
                 txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
+            #endregion
+            #region Ficha4_Abrir
             else if (ficha == "4")
             {
                 //CARACTERISTICA DE AUTOCOMPLETADO EN TXT_BUSQUEDA
@@ -2036,6 +2048,7 @@ namespace Shajobe
                 txt_Busqueda.AutoCompleteMode = AutoCompleteMode.Suggest;
                 txt_Busqueda.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
+            #endregion   
         }
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2043,6 +2056,7 @@ namespace Shajobe
             OleDbConnection conexion = null;
             OleDbTransaction transaccion = null;
             string ficha = tabControl1.SelectedIndex.ToString();
+            #region Ficha0_Guardar
             if (ficha == "0")
             {
                 bool i = Verificar_CamposVacios();
@@ -2050,7 +2064,6 @@ namespace Shajobe
                     MessageBox.Show("Inserta todos los datos marcados", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-
                     try
                     {
                         conexion = new OleDbConnection(ObtenerString());
@@ -2062,10 +2075,10 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Id_Almacen ", combo_Almacenm.SelectedIndex + 1);
                         comando.Parameters.AddWithValue("@Id_MateriaPrima ", comboBox_MateriaPrimam.SelectedIndex + 1);
                         comando.Parameters.AddWithValue("@Lote", txt_Lotem.Text);
-                        comando.Parameters.AddWithValue("@Existencia", txt_Existenciam.Text);
-                        comando.Parameters.AddWithValue("@Precio_Compra", txt_PrecioCompram.Text);
-                        comando.Parameters.AddWithValue("@Precio_Venta", txt_PrecioVentam.Text);
-                        comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimam.Value.Date);
+                        comando.Parameters.AddWithValue("@Existencia", Convert.ToDecimal(txt_Existenciam.Text));
+                        comando.Parameters.AddWithValue("@Precio_Compra", Convert.ToDecimal(txt_PrecioCompram.Text));
+                        comando.Parameters.AddWithValue("@Precio_Venta", Convert.ToDecimal(txt_PrecioVentam.Text));
+                        comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimam.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2082,6 +2095,8 @@ namespace Shajobe
                     }
                 }
             }
+            #endregion
+            #region Ficha1_Guardar
             else if (ficha == "1")
             {
                 bool i = Verificar_CamposVaciosP();
@@ -2089,7 +2104,6 @@ namespace Shajobe
                     MessageBox.Show("Inserta todos los datos marcados", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-
                     try
                     {
                         conexion = new OleDbConnection(ObtenerString());
@@ -2102,9 +2116,9 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Id_MateriaPrima ", comboBox_MateriaPrimap.SelectedIndex + 1);
                         comando.Parameters.AddWithValue("@Lote", txt_Lotep.Text);
                         comando.Parameters.AddWithValue("@Existencia", txt_Exisnteciap.Text);
-                        comando.Parameters.AddWithValue("@Precio_Compra", txt_PrecioComprap.Text);
-                        comando.Parameters.AddWithValue("@Precio_Venta", txt_PrecioVentap.Text);
-                        comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimap.Value.Date);
+                        comando.Parameters.AddWithValue("@Precio_Compra", Convert.ToDecimal(txt_PrecioComprap.Text));
+                        comando.Parameters.AddWithValue("@Precio_Venta", Convert.ToDecimal(txt_PrecioVentap.Text));
+                        comando.Parameters.AddWithValue("@Fecha", dateTime_MateriaPrimap.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2121,6 +2135,8 @@ namespace Shajobe
                     }
                 }
             }
+            #endregion
+            #region Ficha2_Guardar
             else if (ficha == "2")
             {
                 bool i = Verificar_CamposVaciosE();
@@ -2160,6 +2176,8 @@ namespace Shajobe
                     }
                 }
             }
+            #endregion
+            #region Ficha3_Guardar
             else if (ficha == "3")
             {
                 bool i = Verificar_CamposVaciosI();
@@ -2167,7 +2185,6 @@ namespace Shajobe
                     MessageBox.Show("Inserta todos los datos marcados", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-
                     try
                     {
                         conexion = new OleDbConnection(ObtenerString());
@@ -2198,6 +2215,8 @@ namespace Shajobe
                     }
                 }
             }
+            #endregion
+            #region Ficha4_Guardar
             else if (ficha == "4")
             {
                 bool i = Verificar_CamposVaciosT();
@@ -2221,10 +2240,10 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Id_ProductoTerminado ", comboBox_ProductoTerminado.SelectedIndex + 1);
                         comando.Parameters.AddWithValue("@Lote ", txt_Lotet.Text);
                         comando.Parameters.AddWithValue("@Existencia", txt_Existenciat.Text);
-                        comando.Parameters.AddWithValue("@Precio_Compra", txt_PrecioComprat.Text);
-                        comando.Parameters.AddWithValue("@Precio_Venta", txt_PrecioVentat.Text);
-                        comando.Parameters.AddWithValue("@Descuento", txt_Descuento.Text);
-                        comando.Parameters.AddWithValue("@Fecha", dateTime_ProductoTerminado.Value.Date);
+                        comando.Parameters.AddWithValue("@Precio_Compra", Convert.ToDecimal(txt_PrecioComprat.Text));
+                        comando.Parameters.AddWithValue("@Precio_Venta", Convert.ToDecimal(txt_PrecioVentat.Text));
+                        comando.Parameters.AddWithValue("@Descuento", Convert.ToDecimal(txt_Descuento.Text));
+                        comando.Parameters.AddWithValue("@Fecha", dateTime_ProductoTerminado.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -2241,6 +2260,7 @@ namespace Shajobe
                     }
                 }
             }
+            #endregion
         }
         private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2547,6 +2567,7 @@ namespace Shajobe
         //-------------------------------------------------------------
         //------------------Busqueda del sistema-----------------------
         //-------------------------------------------------------------
+        #region Busqueda del sistema
         public void BusquedaDatos(int Idp)
         {
             OleDbConnection con = new OleDbConnection();
@@ -2554,6 +2575,7 @@ namespace Shajobe
             OleDbDataReader dr;
             //Obtengo que ficha o que control esta activa para poder limpiar dicho control
             string ficha = tabControl1.SelectedIndex.ToString();
+            #region Ficha0_Busqueda
             if (ficha == "0")
             {
                 con.ConnectionString = ObtenerString();
@@ -2575,12 +2597,12 @@ namespace Shajobe
                     txt_Lotem.Text = dr.GetString(dr.GetOrdinal("Lote"));
                     txt_PrecioCompram.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                     txt_PrecioVentam.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                    string fech = (dr.GetString(dr.GetOrdinal("Fecha")));
-                    dateTime_MateriaPrimam.Value = Convert.ToDateTime(fech).Date;
-
+                    dateTime_MateriaPrimam.Value = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha1_Busqueda
             else if (ficha == "1")
             {
                 con.ConnectionString = ObtenerString();
@@ -2602,11 +2624,12 @@ namespace Shajobe
                     txt_Lotep.Text = dr.GetString(dr.GetOrdinal("Lote"));
                     txt_PrecioComprap.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                     txt_PrecioVentap.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                    string fech = (dr.GetString(dr.GetOrdinal("Fecha")));
-                    dateTime_MateriaPrimap.Value = Convert.ToDateTime(fech).Date;
+                    dateTime_MateriaPrimap.Value = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha2_Busqueda
             else if (ficha == "2")
             {
                 con.ConnectionString = ObtenerString();
@@ -2628,11 +2651,12 @@ namespace Shajobe
                     txt_Lotee.Text = dr.GetString(dr.GetOrdinal("Lote"));
                     txt_PrecioComprae.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                     txt_PrecioVentae.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                    string fech = (dr.GetString(dr.GetOrdinal("Fecha")));
-                    dateTime_ProductoElaborado.Value = Convert.ToDateTime(fech).Date;
+                    dateTime_ProductoElaborado.Value = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha3_Busqueda
             else if (ficha == "3")
             {
                 con.ConnectionString = ObtenerString();
@@ -2653,11 +2677,12 @@ namespace Shajobe
                     txt_Existenciai.Text = Convert.ToString(dr.GetInt32(dr.GetOrdinal("Existencia")));
                     txt_PrecioComprai.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                     txt_PrecioVentai.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                    string fech = (dr.GetString(dr.GetOrdinal("Fecha")));
-                    dateTime_ProductoIndirecto.Value = Convert.ToDateTime(fech).Date;
+                    dateTime_ProductoIndirecto.Value = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha4_Busqueda
             else if (ficha == "4")
             {
                 con.ConnectionString = ObtenerString();
@@ -2680,12 +2705,11 @@ namespace Shajobe
                     txt_PrecioComprat.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                     txt_PrecioVentat.Text = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
                     txt_Descuento.Text = dr.GetDecimal(dr.GetOrdinal("Descuento")).ToString("N");
-                    string fech = (dr.GetString(dr.GetOrdinal("Fecha")));
-                    dateTime_ProductoTerminado.Value = Convert.ToDateTime(fech).Date;
-
+                    dateTime_ProductoTerminado.Value = dr.GetDateTime(dr.GetOrdinal("Fecha"));
                 }
                 con.Close();
             }
+            #endregion
         }
         private void Busqueda()
         {
@@ -2703,11 +2727,11 @@ namespace Shajobe
                 coman.Connection = con;
                 //Obtengo que ficha o que control esta activa para poder limpiar dicho control
                 string ficha = tabControl1.SelectedIndex.ToString();
+                #region Ficha0_BusquedaDatos
                 if (ficha == "0")
                 {
                     string busqueda = txt_Busqueda.Text;
                     txt_Busqueda.Text = busqueda.ToUpper();
-                    //
                     coman.CommandText = "SELECT Tb_AlmacenMateriaPrima.*, Tb_MateriaPrima.Nombre AS Nombre_MateriaPrima, Tb_TipoPieza.Nombre AS Nombre_TipoPieza FROM Tb_AlmacenMateriaPrima INNER JOIN Tb_MateriaPrima ON Tb_AlmacenMateriaPrima.Id_MateriaPrima = Tb_MateriaPrima.Id_MateriaPrima INNER JOIN Tb_TipoPieza ON Tb_MateriaPrima.Id_TipoPieza = Tb_TipoPieza.Id_TipoPieza where Tb_MateriaPrima.Nombre='" + busqueda.ToUpper() + "' AND Tb_AlmacenMateriaPrima.Activo='S'";
                     coman.CommandType = CommandType.Text;
                     con.Open();
@@ -2723,10 +2747,11 @@ namespace Shajobe
                         string Nomb = NombreMateria + " " + NombrePieza;
                         data_resultado.Rows[Renglon].Cells["Nombreb"].Value = Nomb;
                         data_resultado.Rows[Renglon].Cells["Loteb"].Value = dr.GetString(dr.GetOrdinal("Lote"));
-
                     }
                     con.Close();
                 }
+                #endregion
+                #region Ficha1_BusquedaDatos
                 else if (ficha == "1")
                 {
                     string busqueda = txt_Busqueda.Text;
@@ -2747,6 +2772,8 @@ namespace Shajobe
                     }
                     con.Close();
                 }
+                #endregion
+                #region Ficha2_BusquedaDatos
                 else if (ficha == "2")
                 {
                     string busqueda = txt_Busqueda.Text;
@@ -2767,6 +2794,8 @@ namespace Shajobe
                     }
                     con.Close();
                 }
+                #endregion
+                #region Ficha3_BusquedaDatos
                 else if (ficha == "3")
                 {
                     string busqueda = txt_Busqueda.Text;
@@ -2787,6 +2816,8 @@ namespace Shajobe
                     }
                     con.Close();
                 }
+                #endregion
+                #region Ficha4_BusquedaDatos
                 else if (ficha == "4")
                 {
                     string busqueda = txt_Busqueda.Text;
@@ -2807,16 +2838,20 @@ namespace Shajobe
                     }
                     con.Close();
                 }
+                #endregion
             }
         }
         private void bttn_Busqueda_Click(object sender, EventArgs e)
         {
             Busqueda();
         }
+        #endregion
+        
         //-------------------------------------------------------------
         //----------------------AUTO COMPLETAR-------------------------
         //-------------------------------------------------------------
         //Metodo para autocompletar la busqueda
+        #region AutoCompletar_MateriaPrima
         public static DataTable Datos1()
         {
             DataTable dt = new DataTable();
@@ -2841,6 +2876,8 @@ namespace Shajobe
             }
             return coleccion;
         }
+        #endregion
+        #region AutoCompletar_MateriaPrimaP
         public static DataTable Datos2()
         {
             DataTable dt = new DataTable();
@@ -2866,6 +2903,8 @@ namespace Shajobe
             }
             return coleccion;
         }
+        #endregion
+        #region AutoCompletar_ProductoElaborado
         public static DataTable Datos3()
         {
             DataTable dt = new DataTable();
@@ -2890,6 +2929,8 @@ namespace Shajobe
             }
             return coleccion;
         }
+        #endregion
+        #region AutoCompletar_ProductoIndirecto
         public static DataTable Datos4()
         {
             DataTable dt = new DataTable();
@@ -2914,6 +2955,8 @@ namespace Shajobe
             }
             return coleccion;
         }
+        #endregion
+        #region AutoCompletar_ProductoTerminado
         public static DataTable Datos5()
         {
             DataTable dt = new DataTable();
@@ -2938,6 +2981,7 @@ namespace Shajobe
             }
             return coleccion;
         }
+        #endregion
         //-------------------------------------------------------------
         //------Obtiene la cadena de conexion desde la app Config------
         //-------------------------------------------------------------
@@ -2948,6 +2992,7 @@ namespace Shajobe
         //-------------------------------------------------------------
         //-------------------Validacion de campos----------------------
         //-------------------------------------------------------------
+        #region Validacion_CamposFormaPrincipal
         private void txt_Busqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar < 65 || e.KeyChar > 90) && (e.KeyChar < 97 || e.KeyChar > 122) && (e.KeyChar < 7 || e.KeyChar > 9) && (e.KeyChar < 126 || e.KeyChar > 128) && (e.KeyChar < 45 || e.KeyChar > 47) && (e.KeyChar < 31 || e.KeyChar > 33))
@@ -3055,9 +3100,12 @@ namespace Shajobe
                 e.Handled = true;
             }
         }
+        #endregion
         //----------------------------------------------
         //---  Primera pestaña carga de elementos  -----
         //----------------------------------------------
+        #region Elementos_PrimeraPestaña
+        #region Carga de elementos
         //Llenando comboBox de Almacen
         private void Llenando_AlmacenMateriaPrima()
         {
@@ -3133,10 +3181,12 @@ namespace Shajobe
                 data_MateriaPrima.Rows[Indice].Cells["Existenciam"].Value = dr.GetDecimal(dr.GetOrdinal("Existencia")).ToString("N");
                 data_MateriaPrima.Rows[Indice].Cells["Precio_Compram"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                 data_MateriaPrima.Rows[Indice].Cells["Precio_Ventam"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                data_MateriaPrima.Rows[Indice].Cells["Fecham"].Value = dr.GetString(dr.GetOrdinal("Fecha"));
+                data_MateriaPrima.Rows[Indice].Cells["Fecham"].Value = dr.GetDateTime(dr.GetOrdinal("Fecha")).ToString("yyyy-MM-dd");
             }
             con.Close();
         }
+            #endregion
+        #region Verificar_CamposVacios1
         //Verificar espacios vacios
         private bool Verificar_CamposVacios()
         {
@@ -3178,6 +3228,8 @@ namespace Shajobe
                     break;
             }
         }
+        #endregion
+        #endregion
         //----------------------------------------------
         //---  Segunda pestaña carga de elementos  -----
         //----------------------------------------------
