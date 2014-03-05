@@ -2846,7 +2846,6 @@ namespace Shajobe
             Busqueda();
         }
         #endregion
-        
         //-------------------------------------------------------------
         //----------------------AUTO COMPLETAR-------------------------
         //-------------------------------------------------------------
@@ -3233,6 +3232,8 @@ namespace Shajobe
         //----------------------------------------------
         //---  Segunda pestaña carga de elementos  -----
         //----------------------------------------------
+        #region Elementos_SegundaPestaña
+        #region Carga de elementos
         //Llenando comboBox de Almacen
         private void Llenando_AlmacenMateriaPrimaP()
         {
@@ -3297,11 +3298,13 @@ namespace Shajobe
                 data_MateriaPrimaP.Rows[Indice].Cells["Existenciap"].Value = dr.GetInt32(dr.GetOrdinal("Existencia"));
                 data_MateriaPrimaP.Rows[Indice].Cells["Precio_Comprap"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                 data_MateriaPrimaP.Rows[Indice].Cells["Precio_Ventap"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                data_MateriaPrimaP.Rows[Indice].Cells["Fechap"].Value = dr.GetString(dr.GetOrdinal("Fecha"));
+                data_MateriaPrimaP.Rows[Indice].Cells["Fechap"].Value = dr.GetDateTime(dr.GetOrdinal("Fecha")).ToString("yyyy-MM-dd");
             }
             con.Close();
         }
-        //Verificar espacios vacios
+        #endregion
+        #region Verificar_CamposVacios2
+         //Verificar espacios vacios
         private bool Verificar_CamposVaciosP()
         {
             //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
@@ -3342,9 +3345,13 @@ namespace Shajobe
                     break;
             }
         }
+        #endregion
+        #endregion
         //----------------------------------------------
         //---  Tercera pestaña carga de elementos  -----
         //----------------------------------------------
+        #region Elementos_TerceraPestaña
+        #region Carga de elementos
         //Llenando comboBox de Almacen
         private void Llenando_AlmacenMateriaPrimaE()
         {
@@ -3409,10 +3416,12 @@ namespace Shajobe
                 data_ProductoElaborado.Rows[Indice].Cells["Existenciae"].Value = dr.GetDecimal(dr.GetOrdinal("Existencia"));
                 data_ProductoElaborado.Rows[Indice].Cells["Precio_Comprae"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                 data_ProductoElaborado.Rows[Indice].Cells["Precio_Ventae"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                data_ProductoElaborado.Rows[Indice].Cells["Fechae"].Value = dr.GetString(dr.GetOrdinal("Fecha"));
+                data_ProductoElaborado.Rows[Indice].Cells["Fechae"].Value = dr.GetDateTime(dr.GetOrdinal("Fecha")).ToString("yyyy-MM-dd");
             }
             con.Close();
         }
+        #endregion
+        #region Verificar_CamposVacios3
         //Verificar espacios vacios
         private bool Verificar_CamposVaciosE()
         {
@@ -3454,9 +3463,13 @@ namespace Shajobe
                     break;
             }
         }
+        #endregion
+        #endregion
         //----------------------------------------------
         //---  Cuarta pestaña carga de elementos  -----
         //----------------------------------------------
+        #region Elementos_CuartaPestaña
+        #region Carga de elementos
         //Llenando comboBox de Almacen
         private void Llenando_AlmacenProductoIndirecto()
         {
@@ -3520,11 +3533,13 @@ namespace Shajobe
                 data_ProductoIndirecto.Rows[Indice].Cells["Existenciai"].Value = dr.GetInt32(dr.GetOrdinal("Existencia"));
                 data_ProductoIndirecto.Rows[Indice].Cells["Precio_CompraI"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                 data_ProductoIndirecto.Rows[Indice].Cells["Precio_Ventai"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
-                data_ProductoIndirecto.Rows[Indice].Cells["Fechai"].Value = dr.GetString(dr.GetOrdinal("Fecha"));
+                data_ProductoIndirecto.Rows[Indice].Cells["Fechai"].Value = dr.GetDateTime(dr.GetOrdinal("Fecha")).ToString("yyyy-MM-dd");
             }
             con.Close();
         }
-        //Verificar espacios vacios
+        #endregion
+        #region Verificar_CamposVacios4
+         //Verificar espacios vacios
         private bool Verificar_CamposVaciosI()
         {
             //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
@@ -3562,10 +3577,14 @@ namespace Shajobe
                     break;
             }
         }
+        #endregion
+        #endregion
         //----------------------------------------------
         //---   Quinta pestaña carga de elementos  -----
         //----------------------------------------------
-        //Llenando comboBox de Almacen
+        #region Elementos_QuintaPestaña
+        #region Carga de elementos
+         //Llenando comboBox de Almacen
         private void Llenando_AlmacenProductoTerminado()
         {
             OleDbConnection con = new OleDbConnection();
@@ -3630,11 +3649,13 @@ namespace Shajobe
                 data_ProductoTerminado.Rows[Indice].Cells["Precio_Comprat"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Compra")).ToString("N");
                 data_ProductoTerminado.Rows[Indice].Cells["Precio_Ventat"].Value = dr.GetDecimal(dr.GetOrdinal("Precio_Venta")).ToString("N");
                 data_ProductoTerminado.Rows[Indice].Cells["Descuento"].Value = dr.GetDecimal(dr.GetOrdinal("Descuento")).ToString("N");
-                data_ProductoTerminado.Rows[Indice].Cells["Fechat"].Value = dr.GetString(dr.GetOrdinal("Fecha"));
+                data_ProductoTerminado.Rows[Indice].Cells["Fechat"].Value = dr.GetDateTime(dr.GetOrdinal("Fecha")).ToString("yyyy-MM-dd");
             }
             con.Close();
         }
         //Verificar espacios vacios
+        #endregion
+        #region Verificar_CamposVacios5
         private bool Verificar_CamposVaciosT()
         {
             //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
@@ -3675,10 +3696,13 @@ namespace Shajobe
                     break;
             }
         }
+        #endregion
+        #endregion
         //-------------------------------------------------------------
         //------------------DATAGRIDVIEW BUSQUEDA----------------------
         //-------------------------------------------------------------
         //ACCION QUE REALIZA CUANDO SE DA DOBLE CLIC SOBRE EL DATAGRIDVIEW
+        #region Evento doble clic sobre el datagridview
         private void data_MateriaPrima_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Idp = Convert.ToInt32(data_MateriaPrima.CurrentRow.Cells["Id_AlmacenMateriaPrimam"].Value);
@@ -3754,9 +3778,11 @@ namespace Shajobe
             //Quito el panel de busqueda
             Controls.Remove(panel_Busqueda);
         }
+        #endregion
         //-------------------------------------------------------------
         //---------------PANEL DE NIVELES DE PRODUCTOS-----------------
         //-------------------------------------------------------------
+        #region Seccion de Nivel de producto
         #region PanelControles_NivelProductos
         //Creando controles
         Panel panel_Niveles;
@@ -3781,9 +3807,9 @@ namespace Shajobe
         Button bttn_NGuardar;
         Button bttn_NCerrar;
         #endregion
-
         private void nivelMaxMinToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            #region Controles de nivel de productos
             //CREANDO CONTROLES
             panel_Niveles = new System.Windows.Forms.Panel();
             dataGridView_Niveles = new System.Windows.Forms.DataGridView();
@@ -3806,6 +3832,8 @@ namespace Shajobe
             NMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             bttn_NGuardar = new System.Windows.Forms.Button();
             bttn_NCerrar = new System.Windows.Forms.Button();
+            #endregion
+            #region Diseño de controles
             //CREANDO DISEÑO DE LOS CONTROLES
             // 
             // panel_Niveles
@@ -3991,6 +4019,7 @@ namespace Shajobe
             bttn_NCerrar.Click += new EventHandler(bttn_NCerrar_Click);
             bttn_NCerrar.TabIndex = 2;
             bttn_NCerrar.UseVisualStyleBackColor = true;
+            #endregion            
             //AGREGANDO EL CONTROL AL FORMULARIO
             Controls.Add(panel_Niveles);
             tabControl1.Visible = false;
@@ -4015,6 +4044,7 @@ namespace Shajobe
             OleDbDataReader dr;
             //Llenando el comboBox segun el tab que se encuentre activo y el datagridView
             string ficha = tabControl1.SelectedIndex.ToString();
+            #region Ficha0_Nivel
             if (ficha == "0")
             {
                 //Llenando el dataGridView
@@ -4044,6 +4074,8 @@ namespace Shajobe
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha1_Nivel
             else if (ficha == "1")
             {
                 //Llenando el dataGridView
@@ -4068,6 +4100,8 @@ namespace Shajobe
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha2_Nivel
             else if (ficha == "2")
             {
                 //Llenando el dataGridView
@@ -4092,6 +4126,8 @@ namespace Shajobe
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha3_Nivel
             else if (ficha == "3")
             {
                 //Llenando el dataGridView
@@ -4116,6 +4152,8 @@ namespace Shajobe
                 }
                 con.Close();
             }
+            #endregion
+            #region Ficha4_Nivel
             else if (ficha == "4")
             {
                 //Llenando el dataGridView
@@ -4140,6 +4178,7 @@ namespace Shajobe
                 }
                 con.Close();
             }
+            #endregion
         }
         //-------------------------------------------------------------
         //------------------DATAGRIDVIEW BUSQUEDA----------------------
@@ -4358,7 +4397,6 @@ namespace Shajobe
             modificarToolStripMenuItem.Enabled = false;
             eliminarToolStripMenuItem.Enabled = false;
         }
-
         private void ordenDePeladoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Obtengo que ficha o que control esta activa para poder limpiar dicho control
@@ -4368,9 +4406,11 @@ namespace Shajobe
                 Diseño_Menu();
             }
         }
+        #endregion
         //-------------------------------------------------------------
         //--------------------PANEL ORDEN DE PELADO--------------------
         //-------------------------------------------------------------
+        #region Controles orden de pelado
         //Creando controles
         Panel panel_OrdenPelado;
         GroupBox groupBox_Pelado;
@@ -4392,9 +4432,12 @@ namespace Shajobe
         Label lbl_OPesoSalida;
         Label lbl_OPesoEntrada;
         Label lbl_OProducto;
+        #endregion 
         // PRIMER DISEÑO DE PELADO
+        #region Primer diseño
         private void DiseñoPelado()
         {
+            #region Controles de pelado
             panel_OrdenPelado = new System.Windows.Forms.Panel();
             groupBox_Pelado = new System.Windows.Forms.GroupBox();
             bttn_OGuardar = new System.Windows.Forms.Button();
@@ -4415,6 +4458,8 @@ namespace Shajobe
             txt_ORenacida = new System.Windows.Forms.TextBox();
             txt_OPrecioPelado = new System.Windows.Forms.TextBox();
             dateTimePicker_OFecha = new System.Windows.Forms.DateTimePicker();
+            #endregion
+            #region Diseño de orden de pelado
             // 
             // panel_OrdenPelado
             // 
@@ -4601,6 +4646,7 @@ namespace Shajobe
             dateTimePicker_OFecha.Name = "dateTimePicker_OFecha";
             dateTimePicker_OFecha.Size = new System.Drawing.Size(200, 20);
             dateTimePicker_OFecha.TabIndex = 18;
+            #endregion
             //AGREGANDO EL CONTROL AL FORMULARIO
             Tipo_Diseño = true;// Sirve para indicarle al boton guardar en que seccion de diseño le toca entrar
             comboBox_OProducto.Items.Add("NUEZ");
@@ -4610,9 +4656,12 @@ namespace Shajobe
         //Creando controles
         TextBox txt_OPieza;
         Label lbl_OPieza;
+        #endregion
         // SEGUNDO DISEÑO DE PELADO
+        #region Segundo diseño
         private void DiseñoPelado1()
         {
+            #region Controles de diseño
             panel_OrdenPelado = new System.Windows.Forms.Panel();
             groupBox_Pelado = new System.Windows.Forms.GroupBox();
             bttn_OGuardar = new System.Windows.Forms.Button();
@@ -4629,6 +4678,8 @@ namespace Shajobe
             txt_OPrecioPelado = new System.Windows.Forms.TextBox();
             dateTimePicker_OFecha = new System.Windows.Forms.DateTimePicker();
             txt_OPieza = new System.Windows.Forms.TextBox();
+            #endregion
+            #region Diseño de controles
             // 
             // panel_OrdenPelado
             // 
@@ -4779,6 +4830,7 @@ namespace Shajobe
             dateTimePicker_OFecha.Name = "dateTimePicker_OFecha";
             dateTimePicker_OFecha.Size = new System.Drawing.Size(200, 20);
             dateTimePicker_OFecha.TabIndex = 18;
+            #endregion
             //AGREGANDO EL CONTROL AL FORMULARIO
             Llenando_OMateriaPrima();
             Tipo_Diseño = false;// Sirve para indicarle al boton guardar en que seccion de diseño le toca entrar
@@ -4788,6 +4840,7 @@ namespace Shajobe
         }
         // DISEÑO DEL MENU DE SELECCIÓN DE PRODUCTO
         Label lbl_OOpcion;
+        #endregion
         //Creando controles
         private void Diseño_Menu()
         {
@@ -4849,7 +4902,6 @@ namespace Shajobe
             Controls.Add(panel_OrdenPelado);
             tabControl1.Visible = false;
         }
-
         //-------------------------------------------------------------
         //----------------CONFIGURACION DE CONTROLES-------------------
         //-------------------------------------------------------------
@@ -5000,7 +5052,7 @@ namespace Shajobe
         private TextBox[] Campos_Nivel;
         private bool Verificar_CamposVaciosN()
         {
-            Campos_Nivel = new TextBox[1];
+            Campos_Nivel = new TextBox[4];
             //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
             Campos_Nivel[0] = txt_NMax;
             Campos_Nivel[1] = txt_NMin;
