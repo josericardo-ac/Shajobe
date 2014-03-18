@@ -1853,6 +1853,28 @@ namespace Shajobe
                 //En caso de que no existe todavia el panel de niveles
                 //omite la instrucción de quitar dicho control
             }
+            //LIMPIANDO CONTROLES ORDEN DE PELADO
+            try
+            {
+                txt_OPrecioPelado.Clear();
+                txt_OPesoSalida.Clear();
+                txt_OPesoEntrada.Clear();
+                if (Tipo_Diseño == true)
+                {
+                    txt_ORenacida.Clear();
+                    txt_OPedaceria.Clear();
+                    txt_OCorazon.Clear();
+                }
+                else
+                {
+                    txt_OPieza.Clear();
+                }
+            }
+            catch (Exception)
+            {
+                //En caso de que no existe todavia los controles de orden de pelado
+                //omite la instrucción de limpiar controles
+            }
             tabControl1.Visible = true;
             modificarToolStripMenuItem.Enabled = false;
             eliminarToolStripMenuItem.Enabled = false;
@@ -4684,7 +4706,7 @@ namespace Shajobe
             #endregion
             //AGREGANDO EL CONTROL AL FORMULARIO
             Tipo_Diseño = true;// Sirve para indicarle al boton guardar en que seccion de diseño le toca entrar
-            comboBox_OProducto.Items.Add("NUEZ");
+            Llenando_OMateriaPrima();
             Controls.Add(panel_OrdenPelado);
             tabControl1.Visible = false;
         }
@@ -4869,7 +4891,6 @@ namespace Shajobe
             //AGREGANDO EL CONTROL AL FORMULARIO
             Llenando_OMateriaPrima();
             Tipo_Diseño = false;// Sirve para indicarle al boton guardar en que seccion de diseño le toca entrar
-            comboBox_OProducto.Items.Remove("NUEZ");
             Controls.Add(panel_OrdenPelado);
             tabControl1.Visible = false;
         }
@@ -5007,15 +5028,15 @@ namespace Shajobe
                         OleDbCommand comando = new OleDbCommand("SP_OrdenPelado_Alta", conexion, transaccion);
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Clear();
-                        comando.Parameters.AddWithValue("@Id_MateriaPrima ", Idp);
-                        comando.Parameters.AddWithValue("@Peso_Entrada ", Convert.ToDecimal(txt_OPesoEntrada.Text));
-                        comando.Parameters.AddWithValue("@Peso_Salida ", Convert.ToDecimal(txt_OPesoSalida.Text));
-                        comando.Parameters.AddWithValue("@Corazon ", Convert.ToDecimal(txt_OCorazon.Text));
-                        comando.Parameters.AddWithValue("@Pedaceria ", Convert.ToDecimal(txt_OPedaceria.Text));
-                        comando.Parameters.AddWithValue("@Renacida ", Convert.ToDecimal(txt_ORenacida.Text));
-                        comando.Parameters.AddWithValue("@Runer ", 0.00);
-                        comando.Parameters.AddWithValue("@Precio_Pelado ", Convert.ToDecimal(txt_OPrecioPelado.Text));
-                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value);
+                        comando.Parameters.AddWithValue("@Id_MateriaPrima", comboBox_OProducto.SelectedIndex + 1);
+                        comando.Parameters.AddWithValue("@Peso_Entrada", Convert.ToDecimal(txt_OPesoEntrada.Text));
+                        comando.Parameters.AddWithValue("@Peso_Salida", Convert.ToDecimal(txt_OPesoSalida.Text));
+                        comando.Parameters.AddWithValue("@Corazon", Convert.ToDecimal(txt_OCorazon.Text));
+                        comando.Parameters.AddWithValue("@Pedaceria", Convert.ToDecimal(txt_OPedaceria.Text));
+                        comando.Parameters.AddWithValue("@Renacida", Convert.ToDecimal(txt_ORenacida.Text));
+                        comando.Parameters.AddWithValue("@Runer", Convert.ToDecimal(0.00));
+                        comando.Parameters.AddWithValue("@Precio_Pelado", Convert.ToDecimal(txt_OPrecioPelado.Text));
+                        comando.Parameters.AddWithValue("@Fecha_Pelado", dateTimePicker_OFecha.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -5051,15 +5072,15 @@ namespace Shajobe
                         OleDbCommand comando = new OleDbCommand("SP_OrdenPelado_Alta", conexion, transaccion);
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Clear();
-                        comando.Parameters.AddWithValue("@Id_MateriaPrima ", Idp);
-                        comando.Parameters.AddWithValue("@Peso_Entrada ", txt_OPesoEntrada.Text);
-                        comando.Parameters.AddWithValue("@Peso_Salida ", txt_OPesoSalida.Text);
-                        comando.Parameters.AddWithValue("@Corazon ", 0.00);
-                        comando.Parameters.AddWithValue("@Pedaceria ", 0.00);
-                        comando.Parameters.AddWithValue("@Renacida ", 0.00);
-                        comando.Parameters.AddWithValue("@Runer ", Convert.ToDecimal(txt_OPieza.Text));
-                        comando.Parameters.AddWithValue("@Precio_Pelado ", txt_OPrecioPelado.Text);
-                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value);
+                        comando.Parameters.AddWithValue("@Id_MateriaPrima", comboBox_OProducto.SelectedIndex+1);
+                        comando.Parameters.AddWithValue("@Peso_Entrada", txt_OPesoEntrada.Text);
+                        comando.Parameters.AddWithValue("@Peso_Salida", txt_OPesoSalida.Text);
+                        comando.Parameters.AddWithValue("@Corazon",Convert.ToDecimal(0.00));
+                        comando.Parameters.AddWithValue("@Pedaceria",Convert.ToDecimal(0.00));
+                        comando.Parameters.AddWithValue("@Renacida",Convert.ToDecimal(0.00));
+                        comando.Parameters.AddWithValue("@Runer", Convert.ToDecimal(txt_OPieza.Text));
+                        comando.Parameters.AddWithValue("@Precio_Pelado", Convert.ToDecimal(txt_OPrecioPelado.Text));
+                        comando.Parameters.AddWithValue("@Fecha_Pelado", dateTimePicker_OFecha.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
