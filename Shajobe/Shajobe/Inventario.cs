@@ -4406,6 +4406,41 @@ namespace Shajobe
                 Diseño_Menu();
             }
         }
+        //Verificar espacios vacios
+        private TextBox[] Campos_Nivel;
+        private bool Verificar_CamposVaciosN()
+        {
+            Campos_Nivel = new TextBox[2];
+            //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
+            Campos_Nivel[0] = txt_NMax;
+            Campos_Nivel[1] = txt_NMin;
+            //Reinicio el error provider para volver a reemarcar
+            errorProvider1.Clear();
+            Espacios_Vacios = false;
+            for (int i = 0; i < Campos.Length; i++)
+            {
+                if (Campos_Nivel[i].Text.Trim() == "")
+                {
+                    Indicador_CamposVaciosN(i);
+                    Espacios_Vacios = true;
+                }
+            }
+            return Espacios_Vacios;
+        }
+        private void Indicador_CamposVaciosN(int i)
+        {
+            switch (i)
+            {
+                case 0:
+                    errorProvider1.SetError(txt_NMax, "No puedes dejar el campo vacio");
+                    break;
+                case 1:
+                    errorProvider1.SetError(txt_NMin, "No puedes dejar el campo vacio");
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
         //-------------------------------------------------------------
         //--------------------PANEL ORDEN DE PELADO--------------------
@@ -4957,7 +4992,8 @@ namespace Shajobe
             if (Tipo_Diseño == true)
             {
                 //Diseño 
-                bool i = Verificar_CamposVaciosN();
+                #region Diseño1
+                bool i = Verificar_CamposVaciosO();
                 if (i == true)
                     MessageBox.Show("Inserta todos los datos marcados", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
@@ -4968,7 +5004,7 @@ namespace Shajobe
                         conexion = new OleDbConnection(ObtenerString());
                         conexion.Open();
                         transaccion = conexion.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                        OleDbCommand comando = new OleDbCommand("SP_AlmacenMateriaPrima_Alta", conexion, transaccion);
+                        OleDbCommand comando = new OleDbCommand("SP_OrdenPelado_Alta", conexion, transaccion);
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Clear();
                         comando.Parameters.AddWithValue("@Id_MateriaPrima ", Idp);
@@ -4979,25 +5015,29 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Renacida ", Convert.ToDecimal(txt_ORenacida.Text));
                         comando.Parameters.AddWithValue("@Runer ", 0.00);
                         comando.Parameters.AddWithValue("@Precio_Pelado ", Convert.ToDecimal(txt_OPrecioPelado.Text));
-                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value.Date);
-                        //comando.Parameters.AddWithValue("@NMin", txt_NMin.Text);
+                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
+                #endregion
             }
             else
             {
-                //Diseño1
-                //Diseño 
-                bool i = Verificar_CamposVaciosN();
+                //Diseño NUEZ
+                #region Diseño2
+                bool i = Verificar_CamposVaciosO();
                 if (i == true)
                     MessageBox.Show("Inserta todos los datos marcados", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
@@ -5008,7 +5048,7 @@ namespace Shajobe
                         conexion = new OleDbConnection(ObtenerString());
                         conexion.Open();
                         transaccion = conexion.BeginTransaction(System.Data.IsolationLevel.Serializable);
-                        OleDbCommand comando = new OleDbCommand("SP_AlmacenMateriaPrima_Alta", conexion, transaccion);
+                        OleDbCommand comando = new OleDbCommand("SP_OrdenPelado_Alta", conexion, transaccion);
                         comando.CommandType = CommandType.StoredProcedure;
                         comando.Parameters.Clear();
                         comando.Parameters.AddWithValue("@Id_MateriaPrima ", Idp);
@@ -5019,19 +5059,23 @@ namespace Shajobe
                         comando.Parameters.AddWithValue("@Renacida ", 0.00);
                         comando.Parameters.AddWithValue("@Runer ", Convert.ToDecimal(txt_OPieza.Text));
                         comando.Parameters.AddWithValue("@Precio_Pelado ", txt_OPrecioPelado.Text);
-                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value.Date);
-                        //comando.Parameters.AddWithValue("@NMin", txt_NMin.Text);
+                        comando.Parameters.AddWithValue("@Fecha_Pelado ", dateTimePicker_OFecha.Value);
                         comando.ExecuteNonQuery();
                         transaccion.Commit();
-                        conexion.Close();
                         MessageBox.Show("Datos guardados con éxito", "Solicitud procesada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("Ha ocurrido un error inesperado", "Error de datos insertados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        transaccion.Rollback();
+                    }
+                    finally
+                    {
+                        conexion.Close();
                     }
                 }
+                #endregion
             }
         }
         private void bttn_OCerrar_Click(object sender, EventArgs e)
@@ -5049,38 +5093,110 @@ namespace Shajobe
             tabControl1.Visible = true;
         }
         //Verificar espacios vacios
-        private TextBox[] Campos_Nivel;
-        private bool Verificar_CamposVaciosN()
+        private TextBox[] Campos_Pelado;
+        private bool Verificar_CamposVaciosO()
         {
-            Campos_Nivel = new TextBox[4];
-            //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
-            Campos_Nivel[0] = txt_NMax;
-            Campos_Nivel[1] = txt_NMin;
-            //Reinicio el error provider para volver a reemarcar
-            errorProvider1.Clear();
-            Espacios_Vacios = false;
-            for (int i = 0; i < Campos.Length; i++)
+
+            if (Tipo_Diseño == true)
             {
-                if (Campos_Nivel[i].Text.Trim() == "")
+                #region Verificar Campos Vacios diseño 1
+                Campos_Pelado = new TextBox[6];
+                //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
+                Campos_Pelado[0] = txt_OPesoEntrada;
+                Campos_Pelado[1] = txt_OPesoSalida;
+                Campos_Pelado[2] = txt_OCorazon;
+                Campos_Pelado[3] = txt_OPedaceria;
+                Campos_Pelado[4] = txt_ORenacida;
+                Campos_Pelado[5] = txt_OPrecioPelado;
+                //Reinicio el error provider para volver a reemarcar
+                errorProvider1.Clear();
+                Espacios_Vacios = false;
+                for (int i = 0; i < Campos_Pelado.Length; i++)
                 {
-                    Indicador_CamposVaciosN(i);
-                    Espacios_Vacios = true;
+                    if (Campos_Pelado[i].Text.Trim() == "")
+                    {
+                        Indicador_CamposVaciosO(i);
+                        Espacios_Vacios = true;
+                    }
                 }
+                return Espacios_Vacios;
+                #endregion
             }
-            return Espacios_Vacios;
-        }
-        private void Indicador_CamposVaciosN(int i)
-        {
-            switch (i)
+            else
             {
-                case 0:
-                    errorProvider1.SetError(txt_NMax, "No puedes dejar el campo vacio");
-                    break;
-                case 1:
-                    errorProvider1.SetError(txt_NMin, "No puedes dejar el campo vacio");
-                    break;
-                default:
-                    break;
+                #region Verificar Campos Vacios diseño 2
+                Campos_Pelado = new TextBox[4];
+                //Se introduce los textbox en un arreglo con el fin de identificar espacios vacios
+                Campos_Pelado[0] = txt_OPesoEntrada;
+                Campos_Pelado[1] = txt_OPesoSalida;
+                Campos_Pelado[2] = txt_OPieza;
+                Campos_Pelado[3] = txt_OPrecioPelado;
+                //Reinicio el error provider para volver a reemarcar
+                errorProvider1.Clear();
+                Espacios_Vacios = false;
+                for (int i = 0; i < Campos_Pelado.Length; i++)
+                {
+                    if (Campos_Pelado[i].Text.Trim() == "")
+                    {
+                        Indicador_CamposVaciosO(i);
+                        Espacios_Vacios = true;
+                    }
+                }
+                return Espacios_Vacios;
+                #endregion
+            }
+        }
+        private void Indicador_CamposVaciosO(int i)
+        {
+            if (Tipo_Diseño == true)
+            {
+                #region Indicador de campos vacios diseño 1
+                switch (i)
+                {
+                    case 0:
+                        errorProvider1.SetError(txt_OPesoEntrada, "No puedes dejar el campo vacio");
+                        break;
+                    case 1:
+                        errorProvider1.SetError(txt_OPesoSalida, "No puedes dejar el campo vacio");
+                        break;
+                    case 2:
+                        errorProvider1.SetError(txt_OCorazon, "No puedes dejar el campo vacio");
+                        break;
+                    case 3:
+                        errorProvider1.SetError(txt_OPedaceria, "No puedes dejar el campo vacio");
+                        break;
+                    case 4:
+                        errorProvider1.SetError(txt_ORenacida, "No puedes dejar el campo vacio");
+                        break;
+                    case 5:
+                        errorProvider1.SetError(txt_OPrecioPelado, "No puedes dejar el campo vacio");
+                        break;
+                    default:
+                        break;
+                }
+                #endregion
+            }
+            else
+            {
+                #region Indicador de campos vacios diseño 1
+                switch (i)
+                {
+                    case 0:
+                        errorProvider1.SetError(txt_OPesoEntrada, "No puedes dejar el campo vacio");
+                        break;
+                    case 1:
+                        errorProvider1.SetError(txt_OPesoSalida, "No puedes dejar el campo vacio");
+                        break;
+                    case 2:
+                        errorProvider1.SetError(txt_OPieza, "No puedes dejar el campo vacio");
+                        break;
+                    case 3:
+                        errorProvider1.SetError(txt_OPrecioPelado, "No puedes dejar el campo vacio");
+                        break;
+                    default:
+                        break;
+                }
+                #endregion
             }
         }
         #endregion
